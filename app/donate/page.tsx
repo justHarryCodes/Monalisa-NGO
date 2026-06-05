@@ -364,13 +364,30 @@ export default function DonatePage() {
       {/* IMPACT SECTION */}
       <section className="py-16 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl font-bold text-[#1F2937] mb-8">What Your Donation Does</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <h2 className="text-2xl font-bold text-[#1F2937] mb-2">What Your Donation Does</h2>
+          <p className="text-gray-500 text-sm mb-8">Based on current 2025 Nigerian market prices</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {[
-              { amount: "₦1,000", impact: "Provides 2 children with notebooks and pens for a term" },
-              { amount: "₦5,000", impact: "Feeds a family of 4 for one week with essential food items" },
-              { amount: "₦10,000", impact: "Provides a school bag, uniform, and supplies for one child" },
-              { amount: "₦50,000", impact: "Sponsors a full health outreach for an entire community" },
+              {
+                amount: "₦5,000",
+                impact: "Provides exercise books, pens, pencils, and stationery for one child for a full school term",
+              },
+              {
+                amount: "₦10,000",
+                impact: "Covers a school uniform and a pair of shoes — letting a child walk into class with dignity",
+              },
+              {
+                amount: "₦20,000",
+                impact: "Funds a complete back-to-school kit: bag, textbooks, exercise books, and uniform for one indigent child",
+              },
+              {
+                amount: "₦50,000",
+                impact: "Provides a food support package — rice, beans, cooking oil, and condiments — for two families for two weeks",
+              },
+              {
+                amount: "₦100,000",
+                impact: "Sponsors a community health outreach day with free malaria screenings, BP checks, and medications for 30 residents",
+              },
             ].map((item) => (
               <div key={item.amount} className="bg-white rounded-2xl p-5 shadow-md border border-gray-100">
                 <p className="text-2xl font-black text-[#2563EB] mb-2">{item.amount}</p>
