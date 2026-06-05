@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/*
+  Explicit source paths so Tailwind v4 scans every component file.
+  Paths are relative to this CSS file (app/globals.css → ../ = project root).
+*/
+@source "../app/**/*.{ts,tsx}";
+@source "../components/**/*.{ts,tsx}";
+@source "../context/**/*.{ts,tsx}";
+@source "../lib/**/*.{ts}";
+@source "../types/**/*.{ts}";
+
+/* ── CSS custom properties ── */
+:root {
+  --background: #F8FAFC;
+  --foreground: #1F2937;
+  --primary: #2563EB;
+  --accent-red: #DC2626;
+  --accent-purple: #7C3AED;
+}
+
+/* ── Base styles (same layer as Tailwind Preflight, so utilities still win) ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(
+      --font-inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif
+    );
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ── Custom animation utility ── */
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Scrollbar (vendor-prefixed, harmless outside layers) ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
