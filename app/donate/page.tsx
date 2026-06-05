@@ -37,7 +37,7 @@ const campaigns = [
   "Clean Water for Communities",
 ];
 
-const suggestedAmounts = [1000, 2000, 5000, 10000, 25000, 50000];
+const suggestedAmounts = [5000, 10000, 20000, 50000, 100000];
 
 export default function DonatePage() {
   const [copiedAccount, setCopiedAccount] = useState<string | null>(null);
@@ -273,7 +273,7 @@ export default function DonatePage() {
                     {/* AMOUNT SELECTION */}
                     <div>
                       <label className="block text-sm font-medium text-[#1F2937] mb-2">Donation Amount (NGN) *</label>
-                      <div className="grid grid-cols-3 gap-2 mb-3">
+                      <div className="grid grid-cols-5 gap-2 mb-3">
                         {suggestedAmounts.map((amt) => (
                           <button
                             key={amt}
